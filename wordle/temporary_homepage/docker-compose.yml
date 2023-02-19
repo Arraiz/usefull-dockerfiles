@@ -1,4 +1,5 @@
 services:
+
   web:
     build:
       context: ../
@@ -13,15 +14,15 @@ services:
       webservices-network:
 
   web-redirect-wordle:
-  image: adamkdean/redirect
-  container_name: web-redirect-wordle
-  environment:
-    VIRTUAL_HOST: wordle.arraiz.me
-    LETSENCRYPT_HOST: wordle.arraiz.me
-    LETSENCRYPT_EMAIL: "mikeldiezgarcia@gmail.com"
-    REDIRECT_LOCATION: "https://www.wordle.arraiz.me"
-  networks:
-    webservices-network:
+    image: adamkdean/redirect
+    container_name: web-redirect-wordle
+    environment:
+      VIRTUAL_HOST: wordle.arraiz.me
+      LETSENCRYPT_HOST: wordle.arraiz.me
+      LETSENCRYPT_EMAIL: "mikeldiezgarcia@gmail.com"
+      REDIRECT_LOCATION: "https://www.wordle.arraiz.me"
+    networks:
+      webservices-network:
 
 networks:
   webservices-network:
