@@ -1,0 +1,25 @@
+services:
+  web:
+    image: tutum/hello-world
+    expose:
+      - 80
+    environment:
+      HTTP_PORT: 80
+      VIRTUAL_HOST: www.test.arraiz.me
+      LETSENCRYPT_HOST: www.test.arraiz.me
+      LETSENCRYPT_EMAIL: "mikeldiezgarcia@gmail.com"
+    networks:
+      webservices-network:
+
+  web-redirect:
+    image: adamkdean/redirect
+    environment:
+      VIRTUAL_HOST: test.arraiz.me
+      LETSENCRYPT_HOST: test.arraiz.me
+      LETSENCRYPT_EMAIL: "mikeldiezgarcia@gmail.com"
+      REDIRECT_LOCATION: "https://www.example.com"
+    networks:
+      webservices-network:
+
+networks:
+  webservices-network:
