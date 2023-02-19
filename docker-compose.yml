@@ -24,7 +24,7 @@ services:
       webservices-network:
 
   nginx-proxy_test:
-    image: jwilder/nginx-proxy_test
+    image: jwilder/nginx-proxy
     ports:
       - 80:80
       - 443:443
