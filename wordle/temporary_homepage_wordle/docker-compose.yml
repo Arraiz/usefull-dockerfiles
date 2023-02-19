@@ -1,0 +1,29 @@
+services:
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: temp_page
+    environment:
+      HTTP_PORT: 80
+      VIRTUAL_HOST: www.wordle.arraiz.me
+    #  LETSENCRYPT_HOST: www.wordle.arraiz.me
+    #  LETSENCRYPT_EMAIL: "mikeldiezgarcia@gmail.com"
+    networks:
+      webservices-network:
+
+  # web-redirect-wordle:
+  #   image: adamkdean/redirect
+  #   container_name: web-redirect-wordle
+  #   environment:
+  #     VIRTUAL_HOST: wordle.arraiz.me
+  #     LETSENCRYPT_HOST: wordle.arraiz.me
+  #     LETSENCRYPT_EMAIL: "mikeldiezgarcia@gmail.com"
+  #     REDIRECT_LOCATION: "https://www.wordle.arraiz.me"
+  #   networks:
+  #     webservices-network:
+
+networks:
+  webservices-network:
+    external: true
