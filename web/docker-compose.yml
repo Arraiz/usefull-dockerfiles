@@ -11,15 +11,15 @@ services:
     networks:
       webservices-network:
 
-  # web-redirect:
-  #   image: adamkdean/redirect
-  #   environment:
-  #     VIRTUAL_HOST: test.arraiz.me
-  #     LETSENCRYPT_HOST: test.arraiz.me
-  #     LETSENCRYPT_EMAIL: "mikeldiezgarcia@gmail.com"
-  #     REDIRECT_LOCATION: "https://www.test.arraiz.me"
-  #   networks:
-  #     webservices-network:
+  web-redirect:
+    image: adamkdean/redirect
+    environment:
+      VIRTUAL_HOST: test.arraiz.me
+      LETSENCRYPT_HOST: test.arraiz.me
+      LETSENCRYPT_EMAIL: "mikeldiezgarcia@gmail.com"
+      REDIRECT_LOCATION: "https://www.test.arraiz.me"
+    networks:
+      webservices-network:
 
 networks:
   webservices-network:
