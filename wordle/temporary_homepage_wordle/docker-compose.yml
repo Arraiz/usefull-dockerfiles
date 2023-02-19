@@ -20,7 +20,7 @@ services:
       VIRTUAL_HOST: wordle.arraiz.me
       LETSENCRYPT_HOST: wordle.arraiz.me
       LETSENCRYPT_EMAIL: "mikeldiezgarcia@gmail.com"
-      REDIRECT_LOCATION: "www.wordle.arraiz.me"
+      REDIRECT_LOCATION: "http://www.wordle.arraiz.me"
     networks:
       webservices-network:
 
