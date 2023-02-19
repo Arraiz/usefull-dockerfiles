@@ -23,3 +23,9 @@ services:
 
 networks:
   webservices-network:
+
+
+volumes:
+  nginx-certs:
+  nginx-vhost:
+  nginx-html:
