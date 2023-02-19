@@ -13,16 +13,16 @@ services:
     networks:
       webservices-network:
 
-  web-redirect-wordle:
-    image: adamkdean/redirect
-    container_name: web-redirect-wordle
-    environment:
-      VIRTUAL_HOST: wordle.arraiz.me
-      LETSENCRYPT_HOST: wordle.arraiz.me
-      LETSENCRYPT_EMAIL: "mikeldiezgarcia@gmail.com"
-      REDIRECT_LOCATION: "http://www.wordle.arraiz.me"
-    networks:
-      webservices-network:
+  # web-redirect-wordle:
+  #   image: adamkdean/redirect
+  #   container_name: web-redirect-wordle
+  #   environment:
+  #     VIRTUAL_HOST: wordle.arraiz.me
+  #     LETSENCRYPT_HOST: wordle.arraiz.me
+  #     LETSENCRYPT_EMAIL: "mikeldiezgarcia@gmail.com"
+  #     REDIRECT_LOCATION: "http://www.wordle.arraiz.me"
+  #   networks:
+  #     webservices-network:
 
 networks:
   webservices-network:
