@@ -8,8 +8,8 @@ services:
     environment:
       HTTP_PORT: 80
       VIRTUAL_HOST: www.wordle.arraiz.me
-    #  LETSENCRYPT_HOST: www.wordle.arraiz.me
-    #  LETSENCRYPT_EMAIL: "mikeldiezgarcia@gmail.com"
+      LETSENCRYPT_HOST: www.wordle.arraiz.me
+      LETSENCRYPT_EMAIL: "mikeldiezgarcia@gmail.com"
     networks:
       webservices-network:
 
