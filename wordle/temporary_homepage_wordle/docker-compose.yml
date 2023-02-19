@@ -7,7 +7,7 @@ services:
     image: temp_page
     environment:
       HTTP_PORT: 80
-      VIRTUAL_HOST: https://wordle.arraiz.me
+      VIRTUAL_HOST: http://wordle.arraiz.me
       LETSENCRYPT_HOST: wordle.arraiz.me
       LETSENCRYPT_EMAIL: "mikeldiezgarcia@gmail.com"
     networks:
