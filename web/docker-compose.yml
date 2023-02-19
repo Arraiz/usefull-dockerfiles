@@ -23,6 +23,8 @@ services:
 
 networks:
   webservices-network:
+    external: true
+  
 
 
 volumes:
