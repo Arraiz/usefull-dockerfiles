@@ -1,0 +1,28 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: temp_page
+    environment:
+      HTTP_PORT: 80
+      VIRTUAL_HOST: www.arraiz.me
+      LETSENCRYPT_HOST: www.arraiz.me
+      LETSENCRYPT_EMAIL: "mikeldiezgarcia@gmail.com"
+    networks:
+      webservices-network:
+
+  web-redirect-landing:
+    image: adamkdean/redirect
+    container_name: web-redirect-landing
+    environment:
+      VIRTUAL_HOST: wordle.arraiz.me
+      LETSENCRYPT_HOST: wordle.arraiz.me
+      LETSENCRYPT_EMAIL: "mikeldiezgarcia@gmail.com"
+      REDIRECT_LOCATION: "https://www.arraiz.me"
+    networks:
+      webservices-network:
+
+networks:
+  webservices-network:
+    external: true
