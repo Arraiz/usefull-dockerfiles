@@ -10,7 +10,7 @@ services:
       #LETSENCRYPT_HOST: www.arraiz.me
       #LETSENCRYPT_EMAIL: "mikeldiezgarcia@gmail.com"
     volumes:
-    - html:/var/www/html
+    - ./html:/var/www/html
     networks:
       webservices-network:
 
