@@ -6,23 +6,25 @@ services:
     image: temp_page
     environment:
       HTTP_PORT: 80
-      VIRTUAL_HOST: www.arraiz.me
-      LETSENCRYPT_HOST: www.arraiz.me
-      LETSENCRYPT_EMAIL: "mikeldiezgarcia@gmail.com"
+      VIRTUAL_HOST: arraiz.me
+      #LETSENCRYPT_HOST: www.arraiz.me
+      #LETSENCRYPT_EMAIL: "mikeldiezgarcia@gmail.com"
+    volumes:
+    - html:/var/www/html
     networks:
       webservices-network:
 
 
-  nginx-redirect:
-    image: schmunk42/nginx-redirect
-    container_name: web-redirect-landing
-    environment:
-      VIRTUAL_HOST: wordle.arraiz.me
-      SERVER_REDIRECT: www.arraiz.me
-       #LETSENCRYPT_HOST: wordle.arraiz.me
-       #LETSENCRYPT_EMAIL: "mikeldiezgarcia@gmail.com"
-    networks:
-      webservices-network:
+  # nginx-redirect:
+  #   image: schmunk42/nginx-redirect
+  #   container_name: web-redirect-landing
+  #   environment:
+  #     VIRTUAL_HOST: wordle.arraiz.me
+  #     SERVER_REDIRECT: www.arraiz.me
+  #      #LETSENCRYPT_HOST: wordle.arraiz.me
+  #      #LETSENCRYPT_EMAIL: "mikeldiezgarcia@gmail.com"
+  #   networks:
+  #     webservices-network:
 
 
 
