@@ -13,3 +13,6 @@ services:
 networks:
   webservices-network:
     name: webservices-network
+
+volumes:
+  html:
