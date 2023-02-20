@@ -14,31 +14,6 @@ services:
     networks:
       webservices-network:
 
-
-  # nginx-redirect:
-  #   image: schmunk42/nginx-redirect
-  #   container_name: web-redirect-landing
-  #   environment:
-  #     VIRTUAL_HOST: wordle.arraiz.me
-  #     SERVER_REDIRECT: www.arraiz.me
-  #      #LETSENCRYPT_HOST: wordle.arraiz.me
-  #      #LETSENCRYPT_EMAIL: "mikeldiezgarcia@gmail.com"
-  #   networks:
-  #     webservices-network:
-
-
-
-  # web-redirect-landing:
-  #   image: adamkdean/redirect
-  #   container_name: web-redirect-landing
-  #   environment:
-  #     VIRTUAL_HOST: wordle.arraiz.me
-  #     LETSENCRYPT_HOST: wordle.arraiz.me
-  #     LETSENCRYPT_EMAIL: "mikeldiezgarcia@gmail.com"
-  #     REDIRECT_LOCATION: "https://www.arraiz.me"
-  #   networks:
-  #     webservices-network:
-
 networks:
   webservices-network:
     external: true
