@@ -1,10 +1,12 @@
 services:
-  nginx-proxy_test:
+  nginx-proxy-no-ssl:
     image: jwilder/nginx-proxy
     ports:
       - 80:80
       - 443:443
-    container_name: nginx-proxy_test
+    container_name: nginx-proxy-no-ssl
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
     networks:
       webservices-network:
 
