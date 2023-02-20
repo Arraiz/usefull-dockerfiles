@@ -5,7 +5,7 @@ services:
       build:
         context: $HOME/wordle/react-wordle-unir
         dockerfile: $HOME/wordle/react-wordle-unir/docker/Dockerfile
-      image: teleco_prod:v0.2
+      image: prod:v0.2
       expose:
           - 3000
       container_name: wordle_teleco
