@@ -7,7 +7,7 @@ services:
         dockerfile: $HOME/wordle/react-wordle-unir/docker/Dockerfile
       image: teleco_prod:v0.1
       expose:
-          - 8080
+          - 3000
       container_name: wordle_teleco
       environment:
         - VIRTUAL_HOST=dev.arraiz.me
