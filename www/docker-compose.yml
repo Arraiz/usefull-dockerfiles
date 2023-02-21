@@ -7,8 +7,9 @@ services:
     environment:
       HTTP_PORT: 80
       VIRTUAL_HOST: www.arraiz.me
-      #LETSENCRYPT_HOST: www.arraiz.me
-      #LETSENCRYPT_EMAIL: "mikeldiezgarcia@gmail.com"
+      LETSENCRYPT_HOST: www.arraiz.me
+      LETSENCRYPT_EMAIL: "mikeldiezgarcia@gmail.com"
+      HTTPS_METHOD: redirect
     volumes:
     - ./html:/var/www/html
     networks:
