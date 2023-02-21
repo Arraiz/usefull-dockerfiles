@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+    wordle-dev:
+      build:
+        context: $HOME/wordle/react-wordle-unir
+        dockerfile: $HOME/wordle/react-wordle-unir/docker/Dockerfile
+      image: prod:v0.2
+      expose:
+          - 3000
+      container_name: wordle_teleco
+      environment:
+        - VIRTUAL_PORT=3000
+        - VIRTUAL_HOST=wordle.arraiz.me
+        - LETSENCRYPT_HOST=wordle.arraiz.me
+        - HTTPS_METHOD=redirect
+      networks:
+        webservices-network:
+
+networks:
+  webservices-network:
+    external: true
