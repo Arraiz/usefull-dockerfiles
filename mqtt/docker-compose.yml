@@ -8,8 +8,6 @@ services:
       - 1883:1883
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
-    networks:
-      - nginx-proxy
 
   mosquitto:
     image: eclipse-mosquitto
