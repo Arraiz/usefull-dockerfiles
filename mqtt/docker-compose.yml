@@ -24,10 +24,5 @@ services:
       - VIRTUAL_HOST=euskelec.arraiz.me
       - VIRTUAL_PORT=1883
       - VIRTUAL_PROTO=mqtt
-    networks:
-      - nginx-proxy
 
-networks:
-  nginx-proxy:
-    external:
-      name: nginx-proxy
+
