@@ -4,7 +4,7 @@ services:
     ports:
       - 80:80
       - 443:443
-      - 1883:443
+      - 1883:1883
       - 9001:9001
     container_name: nginx-proxy-no-ssl
     volumes:
