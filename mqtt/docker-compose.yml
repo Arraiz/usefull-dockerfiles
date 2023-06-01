@@ -1,19 +1,32 @@
+version: '3'
 services:
-  mqtt:
-    image: eclipse-mosquitto
-    expose:
-      - 1883
-      - 9001
-    environment:
-      HTTP_PORT: 1883
-      VIRTUAL_HOST: euskelec.arraiz.me
-      LETSENCRYPT_HOST: euskelec.arraiz.me
-      LETSENCRYPT_EMAIL: "mikeldiezgarcia@gmail.com"
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    ports:
+      - 80:80
+      - 443:443
+      - 1883:1883
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
     networks:
-      webservices-network:
+      - nginx-proxy
 
+  mosquitto:
+    image: eclipse-mosquitto
+    volumes:
+      - ./mosquitto/config:/mosquitto/config
+      - ./mosquitto/data:/mosquitto/data
+      - ./mosquitto/log:/mosquitto/log
+    ports:
+      - 1883:1883
+      - 9001:9001
+    environment:
+      - VIRTUAL_HOST=euskelec.arraiz.me
+      - VIRTUAL_PORT=1883
+      - VIRTUAL_PROTO=mqtt
+    networks:
+      - nginx-proxy
 
 networks:
   webservices-network:
-    external: true
-  
+    name: webservices-network
