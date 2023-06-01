@@ -28,5 +28,6 @@ services:
       - nginx-proxy
 
 networks:
-  webservices-network:
-    name: webservices-network
+  nginx-proxy:
+    external:
+      name: nginx-proxy
