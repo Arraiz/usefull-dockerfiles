@@ -1,26 +1,18 @@
 version: '3'
+
 services:
-  nginx-proxy:
-    image: jwilder/nginx-proxy
+  mqtt-proxy:
+    image: nginx
     ports:
-      - 80:80
-      - 443:443
       - 1883:1883
     volumes:
-      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - mqtt-server
 
-  mosquitto:
+  mqtt-server:
     image: eclipse-mosquitto
-    volumes:
-      - ./mosquitto/config:/mosquitto/config
-      - ./mosquitto/data:/mosquitto/data
-      - ./mosquitto/log:/mosquitto/log
     ports:
-      - 1883:1883
-      - 9001:9001
-    environment:
-      - VIRTUAL_HOST=euskelec.arraiz.me
-      - VIRTUAL_PORT=1883
-      - VIRTUAL_PROTO=mqtt
-
-
+      - 1884:1883
+    volumes:
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf
