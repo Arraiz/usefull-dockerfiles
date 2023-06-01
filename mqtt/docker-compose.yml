@@ -15,9 +15,9 @@ services:
       - ./mosquitto/config:/mosquitto/config
       - ./mosquitto/data:/mosquitto/data
       - ./mosquitto/log:/mosquitto/log
-    expose:
-      - 1883
-      - 9001
+    ports:
+      - 1883:1883
+      - 9001:9001
     environment:
       - VIRTUAL_HOST=euskelec.arraiz.me
       - VIRTUAL_PORT=1883
